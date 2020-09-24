@@ -8,7 +8,24 @@
   <title></title>
   </head>
   <body>
-<ul></ul>
+    <div class="container">
+      <div class="row">
+        <form class="col">
+          <div class="form-group">
+            <!-- label for attribute should match the id of the input it is associated with -->
+            <label for="message">Message</label>
+            <input type="text" class="form-control" id="message" placeholder="Enter message" name="message">
+          </div>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <ul class="col">Messages</ul>
+      </div>
+    </div>
+
 
 
 <script src="./main.js"></script>
