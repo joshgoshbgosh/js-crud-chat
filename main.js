@@ -4,11 +4,31 @@ const BASE_URL ="http://tiny-lasagna-server.herokuapp.com/collections/cohort-cov
 const $container = document.querySelector('ul');
 
 //////////////////////////////////////////////////// GET REQUEST
+
+//   function deleteMessage(event) {
+// const id = event.target.dataset.id
+//      fetch(`${BASE_URL}/${id}`, {
+//       method: 'delete'
+//     })
+//     .then(response => response.json())
+//     .then(result => console.log('You did it:', result));
+//   }
+//
+
+
+function deleteMessage(id) {
+  fetch(`${BASE_URL}/${id}`, {
+    method: 'DELETE'
+  })
+  .then(response => response.json())
+  .then(result => console.log('You did it:', result));
+}
+
 function buildHTML(data) {
   console.log('data', data);
   let html = '';
   data.forEach(function(item){
-    html += `<li>${item.message}</li>`
+    html += `<li><p>${item.message}</p><button onclick=deleteMessage('${item._id}')>Delete</button></li>`
   });
 
   console.log('html', html);
@@ -53,6 +73,18 @@ function createMessage(event) {
 }
 
 document.querySelector('form').addEventListener('submit', createMessage);
+
+
+
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.delete
+
+
+
+
+
+
+
 
 
 
